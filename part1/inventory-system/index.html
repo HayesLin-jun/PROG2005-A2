@@ -1,0 +1,75 @@
+<!--
+Author: LinZijun
+Student ID: 24832397
+Part 1 - Inventory Management System
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="navbar">
+        Inventory Management System
+    </div>
+
+    <div id="messageBox"></div>
+
+    <div class="main">
+
+        <!-- LEFT: FORM -->
+        <div class="form-card">
+
+            <h2>Add / Update Item</h2>
+
+            <input type="text" id="itemID" placeholder="Item ID">
+            <input type="text" id="itemName" placeholder="Item Name">
+
+            <select id="category">
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Tools">Tools</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" id="price" placeholder="Price">
+            <input type="text" id="supplierName" placeholder="Supplier Name">
+
+            <select id="stockStatus">
+                <option value="In Stock">In Stock</option>
+                <option value="Low Stock">Low Stock</option>
+                <option value="Out of Stock">Out of Stock</option>
+            </select>
+
+            <label><input type="checkbox" id="popularItem"> Popular Item</label>
+
+            <textarea id="comment" placeholder="Comment"></textarea>
+
+            <button id="addBtn">Add Item</button>
+            <button id="updateBtn">Update Item</button>
+            <button id="deleteBtn" class="delete-btn">Delete Item</button>
+
+            <hr/>
+
+            <input type="text" id="searchInput" placeholder="Search by Item Name">
+            <button id="searchBtn">Search</button>
+            <button id="showAllBtn">Show All</button>
+            <button id="showPopularBtn">Show Popular</button>
+
+        </div>
+
+        <!-- RIGHT: CARDS -->
+        <div id="displayArea"></div>
+
+    </div>
+
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html>
