@@ -1,0 +1,131 @@
+/*
+Author: LinZijun
+Student ID: 24832397
+Assignment: Part 1 - Inventory Management System
+*/
+
+:root {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --primary: #0d6efd;
+    --danger: #dc3545;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+}
+
+/* ---------- Top Navigation ---------- */
+.navbar {
+    height: 70px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ---------- Notification ---------- */
+#messageBox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    min-width: 220px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+/* ---------- Main Layout ---------- */
+.main {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 70px);
+}
+
+/* ---------- Form Card ---------- */
+.form-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea,
+.form-card button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.form-card button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: var(--danger) !important;
+}
+
+/* ---------- Cards Grid ---------- */
+#displayArea {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    overflow-y: auto;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* ---------- Status Pills ---------- */
+.pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.in { background: #198754; }
+.low { background: #fd7e14; }
+.out { background: #dc3545; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
